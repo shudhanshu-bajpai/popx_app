@@ -5,7 +5,7 @@ interface AccountScreenProps {
   onNavigate: (screen: string) => void;
 }
 
-export default function AccountScreen({ onNavigate }: AccountScreenProps) {
+export default function AccountScreen() {
   const navigate = useNavigate();
 
   return (
@@ -16,7 +16,7 @@ export default function AccountScreen({ onNavigate }: AccountScreenProps) {
         </h1>
       </div>
 
-      <div className="bg-white rounded-lg p-6 mb-6">
+      <div className="bg-white rounded-[6px] p-6 mb-6">
         <div className="flex items-start space-x-4">
           <div className="relative">
             <div className="w-16 h-16 rounded-full overflow-hidden">

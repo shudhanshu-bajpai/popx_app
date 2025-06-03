@@ -5,12 +5,19 @@ interface LoginScreenProps {
   onNavigate: (screen: string) => void
 }
 
-export default function LoginScreen({ onNavigate }: LoginScreenProps) {
+export default function LoginScreen() {
 
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+
+  const isFormValid = () => {
+  return (
+    email.trim() &&
+    password.trim()
+  );
+};
 
   return (
     <div className="px-6 py-8 min-h-screen bg-gray-50">
@@ -52,8 +59,14 @@ export default function LoginScreen({ onNavigate }: LoginScreenProps) {
         </div>
 
         <button
-          onClick={() => navigate("/account")}
-          className="w-full rounded-xl bg-gray-400 text-white py-3 rounded-lg text-lg font-medium mt-8"
+          onClick={() => {
+            if (isFormValid()) {
+              navigate("/account");
+            } else {
+              alert("Please fill all required fields.");
+            }
+          }}
+          className="w-full rounded-xl bg-gray-400 text-white py-3 text-lg font-medium mt-8"
         >
           Login
         </button>

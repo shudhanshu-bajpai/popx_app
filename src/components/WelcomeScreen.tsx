@@ -4,7 +4,7 @@ interface WelcomeScreenProps {
   onNavigate: (screen: string) => void
 }
 
-export default function WelcomeScreen({ onNavigate }: WelcomeScreenProps) {
+export default function WelcomeScreen() {
 
   const navigate = useNavigate();
 
